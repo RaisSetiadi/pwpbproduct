@@ -13,5 +13,7 @@ class Post extends Model
         'title',
         'deskripsi',
         'content',
+        'tanggal',
+        'foto',
     ];
 }

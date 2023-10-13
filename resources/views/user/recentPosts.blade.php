@@ -60,10 +60,13 @@
                         </div>
                         <div class="col-md-6">
                             <h4>{{$posts->deskripsi}}</h4>
-                            <p>28 Augustus 2023</p>
+                            <p>{{$posts->tanggal}}</p>
                         </div>
                         <div class="col-md-6 mt-5">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nesciunt id earum at quos quae rem, doloribus tenetur laudantium, aut eveniet numquam natus quo eum debitis aspernatur. Animi, consectetur maiores?</p>
+                        </div>
+                        <div class="col-md-12">
+                            <img src="{{ asset('/storage/posts/'.$posts->foto) }}" style="width: 600px;" alt="">
                         </div>
                     </div>
                 </div>

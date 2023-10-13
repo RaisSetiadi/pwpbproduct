@@ -80,12 +80,34 @@
                 <h5>Recent Post</h5>
                 <hr />
             </div>
+            @foreach ($laravels as $data)
+                <div class="col-md-4 mt-5">
+                    <div class="card">
+                    <a href="{{ route('user.detailLaravel',$data->id) }}"><img src="{{ asset('/storage/laravel/'.$data->image) }}"  class="d-block w-100" alt=""></a> 
+                        <div class="card-body">
+                           <h5 class="card-title">{{ $data->title }}</h5>
+                            <p class="card-title">{{ $data->deskripsi }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @foreach ($javascripts as $data)
+                <div class="col-md-4 mt-5">
+                    <div class="card">
+                    <a href="{{ route('user.halamanjavascript',$data->id) }}"><img src="{{ asset('/storage/javascript/'.$data->image) }}"  class="d-block w-100" alt=""></a> 
+                        <div class="card-body">
+                           <h5 class="card-title">{{ $data->title }}</h5>
+                            <p class="card-title">{{ $data->deskripsi }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
             @foreach ($posts as $post)
                 <div class="col-md-4 mt-5">
                     <div class="card">
-                        <img src="{{ asset('/storage/posts/' . $post->image) }}" alt="">
+                    <a href="{{ route('user.recentPosts',$post->id) }}"><img src="{{ asset('/storage/posts/' . $post->image) }}"  class="d-block w-100" alt=""></a> 
                         <div class="card-body">
-                           <a href="{{ route('user.recentPosts',$post->id) }}"><h5 class="card-title">{{ $post->title }}</h5></a> 
+                           <h5 class="card-title">{{ $post->title }}</h5>
                             <p class="card-title">{{ $post->deskripsi }}</p>
                         </div>
                     </div>
@@ -95,7 +117,7 @@
     </div>
     <div class="d-flex justify-content-center mt-5">
 
-        {{ $posts->links() }}
+      
     </div>
 
     <div class="footer bg-dark text-white p-5">

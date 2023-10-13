@@ -33,9 +33,9 @@
 <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+              <img src="" alt="" srcset="">
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Code Logic <sup>2</sup></div>
         </a>
 
         <!-- Divider -->
@@ -43,7 +43,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/halamanAdmin">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -177,9 +177,11 @@
                                                 <thead>
                                                 <tr>
                                                     <th scope="col">GAMBAR</th>
+                                                    <th scope="col">FOTO HALAMAN</th>
                                                     <th scope="col">JUDUL</th>
                                                     <th scope="col">DESKRIPSI</th>
                                                     <th scope="col">CONTENT</th>
+                                                    <th scope="col">TANGGAL</th>
                                                     <th scope="col">AKSI</th>
                                                 </tr>
                                                 </thead>
@@ -189,9 +191,13 @@
                                                         <td class="text-center">
                                                             <img src="{{ asset('/storage/posts/'.$post->image) }}" class="rounded" style="width: 150px">
                                                         </td>
+                                                        <td class="text-center">
+                                                            <img src="{{ asset('/storage/posts/'.$post->foto) }}" class="rounded" style="width: 150px">
+                                                        </td>
                                                         <td>{{ $post->title }}</td>
                                                         <td>{{  $post->deskripsi  }}</td>
                                                         <td>{!! $post->content !!}</td>
+                                                        <td>{{  $post->tanggal  }}</td>
                                                         <td class="text-center">
                                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                                                 <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-dark">SHOW</a>

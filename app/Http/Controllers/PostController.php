@@ -39,21 +39,30 @@ class PostController extends Controller
         //validate form
         $this->validate($request, [
             'image'     => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'foto' =>'required|image|mimes:jpeg,jpg,png|max:2048',
             'title'     => 'required|min:5',
             'deskripsi'   => 'required|min:10',
-            'content'   => 'required|min:10'
+            'content'   => 'required|min:10',
+            'tanggal'   => 'required|min:10'
+           
         ]);
 
         //upload image
         $image = $request->file('image');
         $image->storeAs('public/posts', $image->hashName());
+        $foto = $request->file('foto');
+        $foto ->storeAs('public/posts',$foto->hashName());
 
         //create post
         Post::create([
             'image'     => $image->hashName(),
+            'foto'      => $foto->hashName(),
             'title'     => $request->title,
             'deskripsi'   => $request->deskripsi,
-            'content'   => $request->content
+            'content'   => $request->content,
+            'tanggal'   => $request->tanggal
+            
+ 
         ]);
 
         //redirect to index
@@ -80,6 +89,7 @@ class PostController extends Controller
         //validate form
         $this->validate($request, [
             'image'     => 'image|mimes:jpeg,jpg,png|max:2048',
+            'foto' =>'required|image|mimes:jpeg,jpg,png|max:2048',
             'title'     => 'required|min:5',
             'deskripsi'   => 'required|min:10',
             'content'   => 'required|min:10'
@@ -94,16 +104,21 @@ class PostController extends Controller
             //upload new image
             $image = $request->file('image');
             $image->storeAs('public/posts', $image->hashName());
+            $foto = $request->file('foto');
+            $foto ->storeAs('public/posts',$foto->hashName());
 
             //delete old image
             Storage::delete('public/posts/'.$post->image);
+            Storage::delete('public/posts/'.$post->foto);
 
             //update post with new image
             $post->update([
                 'image'     => $image->hashName(),
+                'foto'     => $foto->hashName(),
                 'title'     => $request->title,
                 'deskripsi'   => $request->deskripsi,
-                'content'   => $request->content
+                'content'   => $request->content,
+                'tanggal'   => $request->tanggal,
             ]);
 
         } else {
@@ -112,7 +127,9 @@ class PostController extends Controller
             $post->update([
                 'title'     => $request->title,
                 'deskripsi'   => $request->deskripsi,
-                'content'   => $request->content
+                'content'   => $request->content,
+                'tanggal'   => $request->tanggal
+
             ]);
         }
 
