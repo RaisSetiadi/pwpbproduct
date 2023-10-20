@@ -12,6 +12,7 @@ class Ruby extends Model
         'image',
         'title',
         'deskripsi',
+        'tanggal',
         'content',
     ];
 }

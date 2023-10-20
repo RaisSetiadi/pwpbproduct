@@ -77,8 +77,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 mt-5">
-                <h5>Recent Post</h5>
+                <h5>Home Page</h5>
                 <hr />
+            </div>
+            <div class="judul-laravel">
+             <a href="{{route('user.halamanLaravel')}}"style="text-decoration: none;"   >  <h5>Laravel</h5></a> 
             </div>
             @foreach ($laravels as $data)
                 <div class="col-md-4 mt-5">
@@ -91,10 +94,13 @@
                     </div>
                 </div>
             @endforeach
+            <div class="judul-javascript mt-5">
+            <a href="{{route('user.halamanjavascript')}}"style="text-decoration: none;"><h5>javascript</h5></a>
+            </div>
             @foreach ($javascripts as $data)
                 <div class="col-md-4 mt-5">
                     <div class="card">
-                    <a href="{{ route('user.halamanjavascript',$data->id) }}"><img src="{{ asset('/storage/javascript/'.$data->image) }}"  class="d-block w-100" alt=""></a> 
+                    <a href="{{ route('user.detailjavascript',$data->id) }}"><img src="{{ asset('/storage/javascript/'.$data->image) }}"  class="d-block w-100" alt=""></a> 
                         <div class="card-body">
                            <h5 class="card-title">{{ $data->title }}</h5>
                             <p class="card-title">{{ $data->deskripsi }}</p>
@@ -102,19 +108,42 @@
                     </div>
                 </div>
             @endforeach
-            @foreach ($posts as $post)
+
+            <div class="judul-java mt-5">
+            <a href="{{route('user.halamanjava')}}" style="text-decoration: none;"><h5>java</h5></a>
+            </div>
+
+            @foreach ($javas as $data)
                 <div class="col-md-4 mt-5">
                     <div class="card">
-                    <a href="{{ route('user.recentPosts',$post->id) }}"><img src="{{ asset('/storage/posts/' . $post->image) }}"  class="d-block w-100" alt=""></a> 
+                    <a href="{{ route('user.detailjava',$data->id) }}"><img src="{{ asset('/storage/java/' . $data->image) }}"  class="d-block w-100" alt=""></a> 
                         <div class="card-body">
-                           <h5 class="card-title">{{ $post->title }}</h5>
-                            <p class="card-title">{{ $post->deskripsi }}</p>
+                           <h5 class="card-title">{{ $data->title }}</h5>
+                            <p class="card-title">{{ $data->deskripsi }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+            <div class="judul-ruby mt-5">
+            <a href="{{route('user.halamanruby')}}" style="text-decoration: none;"><h5>Ruby</h5></a>
+            </div>
+            @foreach ($rubys as $data)
+                <div class="col-md-4 mt-5">
+                    <div class="card">
+                    <a href="{{ route('user.detailruby',$data->id) }}"><img src="{{ asset('/storage/ruby/' . $data->image) }}"  class="d-block w-100" alt=""></a> 
+                        <div class="card-body">
+                           <h5 class="card-title">{{ $data->title }}</h5>
+                            <p class="card-title">{{ $data->deskripsi }}</p>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
+
+
+
     <div class="d-flex justify-content-center mt-5">
 
       

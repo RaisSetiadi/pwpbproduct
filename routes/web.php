@@ -19,7 +19,7 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+ 
 Route::get('/', function () {
     return view('welcome');
 });
@@ -57,3 +57,4 @@ Route::get('/halamanjava',[HalamanjavaController::class,'index'])->name('user.ha
 Route::get('/detailJava/{id}',[DetailController::class,'java'])->name('user.detailjava');
 //route untuk halaman ruby untuk user
 Route::get('/halamanRuby',[HalamanrubyController::class,'index'])->name('user.halamanruby');
+Route::get('/detailruby/{id}',[DetailController::class,'ruby'])->name('user.detailruby');

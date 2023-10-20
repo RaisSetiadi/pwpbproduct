@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>CRUD RUBY</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
@@ -164,6 +164,7 @@
                                                         <th scope="col">GAMBAR</th>
                                                         <th scope="col">JUDUL</th>
                                                         <th scope="col">DESKRIPSI</th>
+                                                        <th scope="col">TANGGAL</th>
                                                         <th scope="col">CONTENT</th>
                                                         <th scope="col">AKSI</th>
                                                     </tr>
@@ -177,6 +178,7 @@
                                                             </td>
                                                             <td>{{ $data->title }}</td>
                                                             <td>{{ $data->deskripsi }}</td>
+                                                            <td>{{ $data->tanggal    }}</td>
                                                             <td>{!! $data->content !!}</td>
                                                             <td class="text-center">
                                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
