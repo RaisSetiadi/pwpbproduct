@@ -12,6 +12,7 @@ class Javascript extends Model
         'image',
         'title',
         'deskripsi',
+        'tanggal',
         'content',
     ];
 }

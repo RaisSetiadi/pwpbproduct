@@ -65,6 +65,17 @@
                                     </div>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">TANGGAL</label>
+                                <textarea class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" rows="5" placeholder="Masukkan Tanggal Post">{{ old('tanggal') }}</textarea>
+                            
+                                <!-- error message untuk content -->
+                                @error('tangal')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
 
                             <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>

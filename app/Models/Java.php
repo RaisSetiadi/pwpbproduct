@@ -12,6 +12,7 @@ class Java extends Model
         'image',
         'title',
         'deskripsi',
+        'tanggal',
         'content',
     ];
 }

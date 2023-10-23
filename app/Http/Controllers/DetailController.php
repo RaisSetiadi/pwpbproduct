@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Java;
 use App\Models\Laravel;
 use App\Models\Post;
+use App\Models\ruby;
+use App\Models\javascript;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -27,5 +29,16 @@ class DetailController extends Controller
         $javas = Java::where('id',$id)->first();
         return view('user.detailjava',compact('javas'));
 
+    }
+    public function javascript($id)
+    {
+        $javascripts = javascript::where('id',$id)->first();
+        return view('user.detailjavascript',compact('javascripts'));
+
+    }
+    public function ruby($id)
+    {
+        $rubys = Ruby::where('id',$id)->first();
+        return view('user.detailruby',compact('rubys'));
     }
 }
