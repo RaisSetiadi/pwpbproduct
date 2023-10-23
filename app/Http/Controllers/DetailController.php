@@ -6,6 +6,8 @@ use App\Models\Java;
 use App\Models\Javascript;
 use App\Models\Laravel;
 use App\Models\Post;
+use App\Models\ruby;
+use App\Models\javascript;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -31,8 +33,20 @@ class DetailController extends Controller
     }
     public function javascript($id)
     {
+<<<<<<< HEAD
         $javascripts = Javascript::where('id',$id)->first();
         return view('user.detailjavascript',compact('javascripts'));
 
     }
+=======
+        $javascripts = javascript::where('id',$id)->first();
+        return view('user.detailjavascript',compact('javascripts'));
+
+    }
+    public function ruby($id)
+    {
+        $rubys = Ruby::where('id',$id)->first();
+        return view('user.detailruby',compact('rubys'));
+    }
+>>>>>>> 4274c4bfc4be97b02cebe1317a94e5e075115307
 }

@@ -164,6 +164,7 @@
                                                         <th scope="col">GAMBAR</th>
                                                         <th scope="col">JUDUL</th>
                                                         <th scope="col">DESKRIPSI</th>
+                                                        <th scope="col">TANGGAL</th>
                                                         <th scope="col">CONTENT</th>
                                                         <th scope="col">AKSI</th>
                                                     </tr>
@@ -177,6 +178,7 @@
                                                             </td>
                                                             <td>{{ $data->title }}</td>
                                                             <td>{{ $data->deskripsi }}</td>
+                                                            <td>{{ $data->tanggal }}</td>
                                                             <td>{!! $data->content !!}</td>
                                                             <td class="text-center">
                                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"

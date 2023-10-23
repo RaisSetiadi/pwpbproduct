@@ -37,7 +37,8 @@ class JavascriptController extends Controller
             'image'     => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'title'     => 'required|min:5',
             'deskripsi'   => 'required|min:10',
-            'content'   => 'required|min:10'
+            'content'   => 'required|min:10',
+            'tanggal'   => 'required|min:10'
         ]);
 
         //upload image
@@ -49,7 +50,8 @@ class JavascriptController extends Controller
             'image'     => $image->hashName(),
             'title'     => $request->title,
             'deskripsi'   => $request->deskripsi,
-            'content'   => $request->content
+            'content'   => $request->content,
+            'tanggal'   => $request->tanggal
         ]);
 
         //redirect to index

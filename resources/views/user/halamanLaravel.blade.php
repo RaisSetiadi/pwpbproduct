@@ -52,9 +52,15 @@
         @foreach($laravels as $data)
         <div class="col-md-4 mt-5 mb-5">
            <div class="card">
+<<<<<<< HEAD
            <a href="{{ route('user.detailLaravel',$data->id) }}"> <img src="{{ asset('/storage/laravel/'.$data->image) }}"class="d-block w-100" alt=""></a>
             <div class="card-body">
                <h5 class="card-title">{{ $data->title}}</h5>
+=======
+           <a href="{{ route('user.detailLaravel',$data->id) }}"><img src="{{ asset('/storage/laravel/'.$data->image) }}"  class="d-block w-100"  alt=""></a>
+            <div class="card-body">
+                <h5 class="card-title">{{ $data->title}}</h5>
+>>>>>>> 4274c4bfc4be97b02cebe1317a94e5e075115307
                 <p class="card-title">{{$data->deskripsi}}</p>
             </div>
            </div>
