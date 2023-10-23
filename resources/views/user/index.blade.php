@@ -77,11 +77,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 mt-5">
-                <h5>Recent Post</h5>
+                <h5 style="text-align: center;">Home Page</h5>
                 <hr />
             </div>
+            <div class="judul-laravel">
+              <h4>Laravel</h4>
+              </div>
             @foreach ($laravels as $data)
-                <div class="col-md-4 mt-5">
+                <div class="col-md-4 mt-5"> 
                     <div class="card">
                     <a href="{{ route('user.detailLaravel',$data->id) }}"><img src="{{ asset('/storage/laravel/'.$data->image) }}"  class="d-block w-100" alt=""></a> 
                         <div class="card-body">
@@ -94,7 +97,7 @@
             @foreach ($javascripts as $data)
                 <div class="col-md-4 mt-5">
                     <div class="card">
-                    <a href="{{ route('user.halamanjavascript',$data->id) }}"><img src="{{ asset('/storage/javascript/'.$data->image) }}"  class="d-block w-100" alt=""></a> 
+                    <a href="#"><img src="{{ asset('/storage/javascript/'.$data->image) }}"  class="d-block w-100" alt=""></a> 
                         <div class="card-body">
                            <h5 class="card-title">{{ $data->title }}</h5>
                             <p class="card-title">{{ $data->deskripsi }}</p>
@@ -102,6 +105,7 @@
                     </div>
                 </div>
             @endforeach
+            <h5>java</h5>
             @foreach ($posts as $post)
                 <div class="col-md-4 mt-5">
                     <div class="card">

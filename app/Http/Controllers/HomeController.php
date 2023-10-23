@@ -11,7 +11,7 @@ class HomeController extends Controller
     //
     public function index()
     {
-        $posts = Post::orderBy('tanggal','desc')->limit(6)->get();
+        $posts = Post::orderBy('tanggal','desc')->limit(4)->get();
         $laravels= Laravel::latest()->paginate(6);
         $javascripts= Javascript::latest()->paginate(6);
         return view('user.index',compact('posts','laravels','javascripts'));
